@@ -1,0 +1,5 @@
+1. g++ -Wall -pg qS.cpp -o qS
+
+2. ./qS (run executable)
+
+3. gprof qS gmon.out > output
