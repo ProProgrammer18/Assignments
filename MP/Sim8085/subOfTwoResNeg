@@ -1,0 +1,28 @@
+;Name : Om Gharge
+;PRN : 2020BTEIT00041
+;Q1. a)Program for substraction of two numbers for which result is negative
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+
+start: nop
+       MVI C,00
+       LDA 2000H
+       MOV B,A
+       LDA 2001H
+       SUB B
+       JNC LOOP
+       CMA
+       INR A
+       INR C
+LOOP:  STA 2002H
+       MOV A,C
+       STA 2003H
+
+hlt

@@ -1,0 +1,35 @@
+;Name : Om Gharge
+;PRN : 2020BTEIT00041
+;Q3. ) Program to 8085 microprocessor which counts number from 1 to 10
+; with one second delay between each count
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+mvi d,01h
+lxi b,1000h
+loop3: mov a,d 
+	sta 1000h
+	mvi c,0011h
+loop1: lxi h,01A7h
+loop:	nop
+	dcx h
+	mov a,h
+	ora l
+	jnz loop
+
+	dcr c
+	jnz loop1
+	
+	inr d
+	mov a,d
+	cpi 00h
+	jnz loop3
+
+hlt

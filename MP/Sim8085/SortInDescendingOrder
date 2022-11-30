@@ -1,0 +1,32 @@
+;Name : Om Gharge
+;PRN : 2020BTEIT00041
+;Q) Program to arrange set of five numbers in descending order
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+       LXI H,4200
+       MOV C,M
+	DCR C
+REPEAT: MOV D,C
+        LXI H,4201
+LOOP:   MOV A,M
+        INX H
+        CMP M
+        JNC SKIP
+        MOV B,M
+        MOV M,A
+        DCX H
+        MOV M,B
+        INX H
+SKIP:   DCR D
+        JNZ LOOP
+       DCR C
+	JNZ REPEAT
+       HLT

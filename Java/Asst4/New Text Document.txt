@@ -1,0 +1,77 @@
+import java.util.*;
+
+interface Vehicle {
+	String name = "OM";
+	int maxPassenger = "3";
+	int maxSpeed = "30";
+}
+
+interface LandVehicle extends Vehicle{
+	int numWheels = 4;
+	void drive();
+}
+
+interface SeaVehicle extends Vehicle{
+	int displacement = 1000;
+	void launch();
+}
+
+class Car implements LandVehicle
+{
+	String carName = "Car";
+	public void input(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter name of Car: ");
+		carName = sc.nextLine();
+	}
+	public void drive(){
+		System.out.println("Drive");
+	}
+}
+
+class hovercraft implements LandVehicle,SeaVehicle
+{
+	String hoverName = "HoverCraft";
+	public void input(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter name of HoverCraft: ");
+		hoverName = sc.nextLine();
+	}
+	public void drive(){
+		System.out.println("Drive");
+	}
+	public void launch(){
+		System.out.println("Swim");
+	}
+}
+
+class Ship implements SeaVehicle
+{
+	String shipName = "Titanic";
+	public void input(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter name of Ship: ");
+		shipName = sc.nextLine();
+	}
+	public void launch(){
+		System.out.println("Swim");
+	}
+}
+
+public static void main(){
+	System.out.println("*****Land vehicle******");
+	landvehicle l=new car();
+	l.drive();
+	System.out.println("*****Hovercraft vehicle******");
+	landvehicle l1=new hovecraft();
+	l1.enterland();
+	landvehicle l2=new hovecraft();
+	l2.drive();
+	seavehicle s1=new hovecraft();
+	s1.entersea();
+	seavehicle s2=new hovecraft();
+	s2.launch();
+	System.out.println("*****Sea vehicle******");
+	seavehicle s=new ship();
+	s.launch();
+}
